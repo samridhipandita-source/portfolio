@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samridhi Pandita | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🌸 BACKGROUND */
+body {
+  font-family: 'Manrope', sans-serif;
+  background: linear-gradient(-45deg, #f3e8ff, #e9d5ff, #ddd6fe, #eef2ff);
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+  color: #2b2b3a;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌫 BLOBS */
+.blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+.b1 { background: rgba(168, 85, 247, 0.6); top: 10%; left: 10%; }
+.b2 { background: rgba(99, 102, 241, 0.55); top: 60%; left: 70%; }
+.b3 { background: rgba(196, 181, 253, 0.7); top: 35%; left: 40%; }
+
+/* CONTENT ABOVE BLOBS */
+header, nav, section, footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* CURSOR */
+.cursor {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  background: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.3);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* HEADER */
+header {
+  padding: 120px 20px 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 58px;
+  font-weight: 700;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: rgba(43, 43, 58, 0.75);
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+nav a {
+  text-decoration: none;
+  color: #3b3b52;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #a855f7;
+}
+
+/* SECTIONS */
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CARDS */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  padding: 22px;
+  margin-top: 15px;
+  border-radius: 18px;
+  backdrop-filter: blur(18px);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(168, 85, 247, 0.18);
+}
+
+/* SKILLS */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: rgba(43, 43, 58, 0.6);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🌫 BLOBS -->
+<div class="blobs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+</div>
+
+<!-- 🖱 CURSOR -->
+<div class="cursor"></div>
+
+<header>
+  <h1>Samridhi Pandita</h1>
+  <p>Data Science Student | Aspiring Data & Business Analyst</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    I am a Data Science student passionate about using data to understand patterns, solve problems, and support better decision-making.<br><br>
+
+    I have been actively developing my skills in Python, SQL, and data visualization, and I enjoy applying them in small projects to strengthen my understanding.<br><br>
+
+    I am particularly interested in roles in data analysis and business intelligence, where I can transform complex datasets into clear and actionable insights.
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card">
+    <div class="skills-grid">
+      <span class="skill">Python</span>
+      <span class="skill">SQL</span>
+      <span class="skill">Pandas</span>
+      <span class="skill">NumPy</span>
+      <span class="skill">Matplotlib</span>
+      <span class="skill">Excel</span>
+      <span class="skill">EDA</span>
+      <span class="skill">Statistics</span>
+      <span class="skill">GitHub</span>
+      <span class="skill">Jupyter</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>2D Graphics Editor</h3>
+    <p>Wrote functions to draw circles, rectangles, and triangles using a 2D array system.</p>
+  </div>
+
+  <div class="card">
+    <h3>Student Performance Dashboard</h3>
+    <p>Created interactive dashboard to visualize student performance metrics.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    Email: samridhipandita@gmail.com <br>
+    LinkedIn: www.linkedin.com/in/samridhi-pandita-65704a393 <br><br>
+    <a class="btn" href="#">Download Resume</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Samridhi Pandita | Built with HTML & CSS
+</footer>
+
+<script>
+/* cursor */
+const cursor = document.querySelector(".cursor");
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+/* scroll reveal */
+const sections = document.querySelectorAll("section");
+
+function reveal() {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+      sec.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+</script>
+
+</body>
+</html>
